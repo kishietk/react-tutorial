@@ -2,47 +2,41 @@
   display: block;
   font-family: sans-serif;
   text-align: center;
+  justify-content: center;
   background-color: #ffffff;
 }
 
 .fooder{
   padding: 20px 0;
   background-color: rgb(144, 144, 144);
-  text-align: left;
 }
 
 .header{
   padding: 20px 0;
   background-color:  rgb(144, 144, 144);
-  text-align: left;
 }
 
 .container{
   display: flex;
-  width: 100%;
-  min-height: 680px;
-  text-align: center;
-  justify-content: center;
+  min-height: 740px;
 }
 
 .main{
   display: grid;
   width: calc(100% - 200px);
-  text-align: center;
-  justify-content: center;
 }
 
 .content{
-  display: block;
-  text-align: left;
-  padding: 100px 0;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
+/* nav-bar */
 .nav-bar {
   display: flex;
   max-width: 200px;
   font-size: 20px;
-  font-family: arial;
   background-color: #424242;
 }
 
@@ -63,29 +57,44 @@
   background-color: rgb(203, 203, 203);
 }
 
+.content .nav-bar {
+  display: flex;
+  max-width: 100%;
+  font-size: 18px;
+  background-color: #d1d1d1;
+}
+
+/* user-list */
 .user-list{
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .user-list ul {
   text-align: left;
-  justify-content: left;
-  margin-right: 2em;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  min-height:540px;
 }
 
 .user-list ul li {
   display: grid;
-  margin-right: 2em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-.user-list ul li:hover {
-  background-color: rgb(219, 219, 219);
+  margin-right: 4em;
+  margin-bottom: 4em;
+  margin-top: 4em
 }
 
 .user-list ul li a {
   text-decoration: none;
+}
+
+/* user */
+.user {
+  margin-bottom: 40px;
+}
+
+.user ul {
+  text-align: left;
+  margin-left: 2em;
+}
+
+.user ul li{
+  margin-bottom: 2em;
 }

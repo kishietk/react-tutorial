@@ -20,7 +20,6 @@ export default function User() {
     return <div className="content">
         <div className="user">
             <>
-                {/* show user data */}
                 <UserComponent user={user} />
 
                 <button onClick={() => { setNav(true) }}>edit this user</button>

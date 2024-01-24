@@ -1,4 +1,4 @@
-export default function User({user}) {
+export default function User({ user }) {
     return <>
         <h3>{user.name}'s page</h3>
         <div className="user">
@@ -15,11 +15,13 @@ export default function User({user}) {
                 <li>
                     <p>{`groups:`}</p>
                     <ul>
-                        {user.groups ? user.groups?.map((groups, index) => (
-                            <li key={index}>
-                                <p>{`${groups.name}`}</p>
-                            </li>
-                        )) : "未割当"}
+                        {user.groups
+                            ? user.groups?.map((groups, index) => (
+                                <li key={index}>
+                                    <p>{`${groups.name}`}</p>
+                                </li>
+                            ))
+                            : "未割当"}
                     </ul>
                 </li>
                 <li>

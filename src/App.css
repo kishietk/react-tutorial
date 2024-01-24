@@ -1,14 +1,49 @@
-.App {
+.app {
+  display: block;
   font-family: sans-serif;
   text-align: center;
+  background-color: #ffffff;
+}
+
+.fooder{
+  padding: 20px 0;
+  background-color: rgb(144, 144, 144);
+  text-align: left;
+}
+
+.header{
+  padding: 20px 0;
+  background-color:  rgb(144, 144, 144);
+  text-align: left;
+}
+
+.container{
+  display: flex;
+  width: 100%;
+  min-height: 680px;
+  text-align: center;
+  justify-content: center;
+}
+
+.main{
+  display: grid;
+  width: calc(100% - 200px);
+  text-align: center;
+  justify-content: center;
+}
+
+.content{
+  display: block;
+  text-align: left;
+  padding: 100px 0;
 }
 
 .nav-bar {
+  display: flex;
+  max-width: 200px;
   font-size: 20px;
   font-family: arial;
-  margin: 0 50px;
-  background-color: #ababab;
-  padding: 10px;
+  background-color: #424242;
 }
 
 .nav-bar ul li a {
@@ -18,8 +53,9 @@
 
 .nav-bar ul li {
   display: inline-block;
-  margin-right: 1em;
-
+  margin-right: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .nav-bar ul li:hover {
@@ -27,35 +63,29 @@
   background-color: rgb(203, 203, 203);
 }
 
-.AuthLayout{
-  padding: 50px 0;
-  background-color: rgb(239, 246, 164);
+.user-list{
+  font-size: 24px;
 }
 
-
-.GuestLayout{
-  padding: 50px 0;
-  background-color: rgb(254, 218, 188);
+.user-list ul {
+  text-align: left;
+  justify-content: left;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-.Login{
-  margin: 0 50px;
-  padding: 50px 0;
-  background-color: rgb(220, 212, 241);
+.user-list ul li {
+  display: grid;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
-.LoginFeature{
-  margin: 0 50px;
-  padding: 50px 0;
-  background-color: rgb(233, 166, 166);
+.user-list ul li:hover {
+  background-color: rgb(219, 219, 219);
 }
 
-.Fooder{
-  padding: 20px 0;
-  background-color: rgb(179, 179, 179);
-}
-
-.Header{
-  padding: 20px 0;
-  background-color: rgb(179, 179, 179);
+.user-list ul li a {
+  text-decoration: none;
 }

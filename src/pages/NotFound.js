@@ -1,5 +1,5 @@
-function NotFound(){
-    return <h2>Not Found</h2>;
+export default function NotFound() {
+    return <div className="content">
+        <h1>Not Found</h1>
+    </div>
 }
-
-export default NotFound;

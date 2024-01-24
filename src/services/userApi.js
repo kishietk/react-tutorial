@@ -1,29 +1,55 @@
-import axios from 'axios'
-import getAccessToken from './getAccessToken';
+import { api } from "./api";
 
-const getCurrentUser = async () => {
+//
+const getMe = async () => {
     try {
-        // Get access-token from local strage
-        const token = getAccessToken();
-
         // Send request to the server
-        const response = await axios.get('http://192.168.2.152:8080/api/v1.0/me', {
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            }
-        });
+        const res = await api.get('/me');
 
         // If success, return list of user
-        return response?.data;
+        return res?.data?.data;
     }
     catch (e) {
         throw e;
     }
 };
 
-const userApi = { 
-    getCurrentUser: getCurrentUser,
+/*
+const getUserById = async (id) => {
+    try {
+        // Send request to the server
+        const res = await api.get(`/users/${id}`);
+        
+        // If success, return list of user
+        return res?.data?.data;
+    }
+    catch (e) {
+        throw e;
+    }
+};
+*/
+
+//
+const getUserList = async () => {
+    try {
+        const res = await api.get('/users/search');
+
+        // Adjust response data
+        const array = Object.values(res?.data?.data?.items).sort((a, b) => a.id - b.id);
+        const obj = array.reduce((acc, obj) => {
+            acc[obj.id] = obj;
+            return acc;
+        }, {});
+        return obj;
+    }
+    catch (e) {
+        throw e;
+    }
+};
+
+const userApi = {
+    getMe: getMe,
+    getUserList: getUserList,
 };
 
 export default userApi;

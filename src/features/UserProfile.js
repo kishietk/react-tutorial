@@ -13,10 +13,13 @@ function UserProfile() {
     return <div className='user-profile'>
         <h3>User Profile Feature</h3>
         <p>hello, {user?.name} !</p>
-        {user?.admin && <div>
-            <p>you are admin</p>
-            <Link to="/admin">link to admin page</Link>
-        </div>}
+
+        {user?.admin &&
+            <div>
+                <p>you are admin</p>
+                <Link to="/admin">link to admin page</Link>
+            </div>
+        }
     </div>;
 }
 

@@ -14,21 +14,6 @@ const getMe = async () => {
     }
 };
 
-/*
-const getUserById = async (id) => {
-    try {
-        // Send request to the server
-        const res = await api.get(`/users/${id}`);
-        
-        // If success, return list of user
-        return res?.data?.data;
-    }
-    catch (e) {
-        throw e;
-    }
-};
-*/
-
 //
 const getUserList = async () => {
     try {
@@ -47,9 +32,23 @@ const getUserList = async () => {
     }
 };
 
+const getUserById = async (id) => {
+    try {
+        // Send request to the server
+        const res = await api.get(`/users/${id}`);
+
+        // If success, return list of user
+        return res?.data?.data;
+    }
+    catch (e) {
+        throw e;
+    }
+};
+
 const userApi = {
     getMe: getMe,
     getUserList: getUserList,
+    getUserById: getUserById,
 };
 
 export default userApi;

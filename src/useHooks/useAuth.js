@@ -64,7 +64,7 @@ export function useAuth() {
         try {
             // Get user from API
             const user = await userApi.getMe();
-
+            
             // Execute Redux updateUser action: auth.user will be updated
             dispatch(updateUser(user));
             return user;
@@ -89,5 +89,23 @@ export function useAuth() {
         };
     };
 
-    return { login, logout, getMe, getUserList };
+    // something wrong
+    const getUserById = async (id) => {
+        try {
+            const user = await userApi.getUserById(id);
+            console.log(user);
+            return user;
+        }
+        catch (error) {
+            throw error;
+        };
+    };
+
+    return {
+        login,
+        logout,
+        getMe,
+        getUserList,
+        getUserById,
+    };
 }

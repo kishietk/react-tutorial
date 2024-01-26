@@ -14,30 +14,30 @@ export default function UserList() {
     const data = {
         ...userList,
         // add test data
-        6: { id: 6, name: "6" },
-        7: { id: 7, name: "7" },
-        8: { id: 8, name: "8" },
-        9: { id: 9, name: "9" },
-        10: { id: 10, name: "10" },
-        11: { id: 11, name: "11" },
-        12: { id: 12, name: "12" },
-        13: { id: 13, name: "13" },
-        14: { id: 14, name: "14" },
-        15: { id: 15, name: "15" },
-        16: { id: 16, name: "16" },
-        17: { id: 17, name: "17" },
-        18: { id: 18, name: "18" },
+        6: { id: 6, name: "mr.6" },
+        7: { id: 7, name: "mr.7" },
+        8: { id: 8, name: "mr.8" },
+        9: { id: 9, name: "mr.9" },
+        10: { id: 10, name: "mr.10" },
+        11: { id: 11, name: "mr.11" },
+        12: { id: 12, name: "mr.12" },
+        13: { id: 13, name: "mr.13" },
+        14: { id: 14, name: "mr.14" },
+        15: { id: 15, name: "mr.15" },
+        16: { id: 16, name: "mr.16" },
+        17: { id: 17, name: "mr.17" },
+        18: { id: 18, name: "mr.18" },
     }
 
     return <>
         <Pagination
-            /* data must be an array */
+            // data must be an array
             items={Object.values(data)}
 
-            /* number of items on one page */
+            // number of items on one page
             pageSize={5}
 
-            /* How to arrange items */
+            // How to arrange items
             mapFunc={(output, index) => {
                 return (
                     <li key={index + 1}>

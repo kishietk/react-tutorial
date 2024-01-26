@@ -98,3 +98,32 @@
 .user ul li{
   margin-bottom: 2em;
 }
+
+/* user-editer */
+.user-editer{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.user-editer  ul {
+  text-align: left;
+  margin-left: 2em;
+}
+
+.user-editer  ul li{
+  margin-bottom: 4em;
+}
+
+.user-editer  ul li  ul li{
+  margin-bottom: 1em;
+}
+
+.redirect-button{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.register-input{
+  margin: 20px 0;
+}

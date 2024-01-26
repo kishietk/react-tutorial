@@ -59,6 +59,17 @@ export function useAuth() {
         };
     };
 
+    // Signup request to API
+    const signup = async (data) => {
+        try {
+            console.log(data);
+            console.log("Signup request to API herer");
+        }
+        catch (error) {
+            throw error;
+        };
+    };
+
     // Get current user information from API
     const getMe = async () => {
         try {
@@ -104,6 +115,7 @@ export function useAuth() {
     return {
         login,
         logout,
+        signup,
         getMe,
         getUserList,
         getUserById,

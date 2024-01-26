@@ -1,56 +1,62 @@
-import { useForm, FormProvider } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../utils/schema';
-import RegisterInput from './inputs/RegisterInput';
 import { useSelector } from 'react-redux';
+import { useParams } from "react-router-dom";
+import RedirectButton from './RedirectButton';
 
-export default function UserEditer({ id }) {
+export default function UserEditer() {
 
     // Get user data from url id
+    let { id } = useParams();
     const userList = useSelector((state) => state?.userList?.userList);
     const user = userList[id];
 
-    // Get user data from url id
-    const methods = useForm({
-        resolver: yupResolver(schema),
-        criteriaMode: 'all',
-        reValidateMode: 'onSubmit',
-        defaultValues: {
-            name: user?.name,
-            email: user?.email,
-            phone: user?.phone,
-            signature: user?.signature,
-            timezone: user?.timezone,
-            username: user?.username,
-        },
-    });
-
-    const onSubmit = async (data) => {
-        try {
-            //処理
-            console.log(data);
-        }
-        catch (e) {
-            console.log(e);
-        }
-    };
     return (
-        <>
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <RegisterInput propName={"name"} />
-                    <RegisterInput propName={"email"} />
-                    <RegisterInput propName={"phone"} />
-                    <RegisterInput propName={"signature"} />
-                    <RegisterInput propName={"timezone"} />
-                    <RegisterInput propName={"username"} />
-                    <hr />
-                    <p>edit groups component</p>
-                    <p>edit permissions component</p>
-                    <hr />
-                    <button type="submit">Edit</button>
-                </form>
-            </FormProvider>
-        </>
+        <div className='user-editer'>
+            <ul>
+                <li>
+                    <p>name: {user?.name}</p>
+                    <RedirectButton
+                        url={`/admin/edituser/name/${id}`}
+                        text='edit name'
+                    />
+                </li>
+                <li>
+                    <p>email: {user?.email}</p>
+                    <RedirectButton
+                        url={`/admin/edituser/email/${id}`}
+                        text='edit email'
+                    />
+                </li>
+                <li>
+                    <p>{`groups:`}</p>
+                    <ul>
+                        {user.groups
+                            ? user.groups?.map((groups, index) => (
+                                <li key={index}>
+                                    <p>{`${groups.name}`}</p>
+                                </li>
+                            ))
+                            : "未割当"}
+                    </ul>
+                    <RedirectButton
+                        url={`/admin/edituser/groups/${id}`}
+                        text='edit groups'
+                    />
+                </li>
+                <li>
+                    <p>{`permissions:`}</p>
+                    <ul>
+                        {user.permissions?.map((permission, index) => (
+                            <li key={index}>
+                                <p>{`${permission.name}`}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <RedirectButton
+                        url={`/admin/edituser/permissions/${id}`}
+                        text='edit permissions'
+                    />
+                </li>
+            </ul>
+        </div>
     );
 };

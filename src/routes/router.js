@@ -17,8 +17,12 @@ import { useRoutes } from "react-router-dom";
 import GuestRoute from "./GuestRoute.js";
 import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
-import Admin from "../pages/Admin.js"
-import UserEditer from "../pages/UserEditer.js"
+import Admin from "../pages/Admin.js";
+import UserEditer from "../pages/UserEditer.js";
+import UserNameEditer from "../features/UserNameEditer/index.js";
+import UserEmailEditer from "../components/UserEmailEditer.js";
+import UserGroupsEditer from "../components/UserGroupsEditer.js";
+import UserPermissionsEditer from "../components/UserPermissionsEditer.js";
 
 export default function Router() {
     return useRoutes([
@@ -123,6 +127,42 @@ export default function Router() {
                         {
                             path: ':id',
                             element: <UserEditer />,
+                        },
+                        {
+                            path: 'name',
+                            children: [
+                                {
+                                    path: ':id',
+                                    element: <UserNameEditer />,
+                                },
+                            ],
+                        },
+                        {
+                            path: 'email',
+                            children: [
+                                {
+                                    path: ':id',
+                                    element: <UserEmailEditer />,
+                                },
+                            ],
+                        },
+                        {
+                            path: 'groups',
+                            children: [
+                                {
+                                    path: ':id',
+                                    element: <UserGroupsEditer />,
+                                },
+                            ],
+                        },
+                        {
+                            path: 'permissions',
+                            children: [
+                                {
+                                    path: ':id',
+                                    element: <UserPermissionsEditer />,
+                                },
+                            ],
                         },
                         {
                             path: '*',

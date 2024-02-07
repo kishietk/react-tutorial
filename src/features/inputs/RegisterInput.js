@@ -1,6 +1,8 @@
 import { useFormContext } from 'react-hook-form';
+import TextField from '@mui/material/TextField';
 
-export default function RegisterInput({ propName = "prop", labelText = "" }) {
+
+export default function RegisterInput({ propName = "prop", labelText = "", password = false }) {
     const {
         register,
         formState: { errors },
@@ -8,12 +10,14 @@ export default function RegisterInput({ propName = "prop", labelText = "" }) {
 
     return (
         <div>
-            <label htmlFor={propName}>{labelText}</label>
-            <input
+            <TextField
                 id={propName}
+                label={labelText}
                 {...register(propName, { required: true })}
+                type={password ? "password" : ""}
             />
             <p>{errors[propName]?.message}</p>
+            <br />
         </div>
     );
 };

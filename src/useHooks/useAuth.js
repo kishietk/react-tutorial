@@ -9,8 +9,10 @@ import {
     updateUser
 } from '../redux/auth/slices';
 import { updateUserList } from '../redux/userList/slices.js';
+//import { useNavigate } from 'react-router-dom';
 
 export function useAuth() {
+    //const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = useSelector((state) => state?.auth?.token);
 
@@ -52,6 +54,7 @@ export function useAuth() {
             localStorage.removeItem("accessToken");
             localStorage.removeItem("expiresAt");
             localStorage.removeItem("isLogin");
+
             return success;
         }
         catch (error) {
@@ -60,10 +63,22 @@ export function useAuth() {
     };
 
     // Signup request to API
-    const signup = async (data) => {
+    const signup = async (formData) => {
         try {
-            console.log(data);
-            console.log("Signup request to API herer");
+
+            console.log(formData);
+
+            // Get Invitation Account herer
+            // const invitationToken = await authApi.getInvitation({});
+
+            // Send the accessToken to API to logout
+            const success = await authApi.signup({
+                ...formData,
+                //invitationToken: invitationToken,
+            });
+
+            console.log(success);
+            return success;
         }
         catch (error) {
             throw error;
@@ -75,7 +90,7 @@ export function useAuth() {
         try {
             // Get user from API
             const user = await userApi.getMe();
-            
+
             // Execute Redux updateUser action: auth.user will be updated
             dispatch(updateUser(user));
             return user;
@@ -100,7 +115,6 @@ export function useAuth() {
         };
     };
 
-    // something wrong
     const getUserById = async (id) => {
         try {
             const user = await userApi.getUserById(id);

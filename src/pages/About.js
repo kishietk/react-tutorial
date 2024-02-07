@@ -1,20 +1,27 @@
-import { Link, Outlet } from "react-router-dom";
+import {
+    Box,
+    Container,
+    Grid,
+    Typography,
+} from "@mui/material";
 
 export default function About() {
-    return <div className="content">
-        <nav className="nav-bar">
-            <ul>
-                <li>
-                    <Link to="child-a"> Child A </Link>
-                </li>
-                <li>
-                    <Link to="child-b"> Child B </Link>
-                </li>
-                <li>
-                    <Link to="child-c"> Child C </Link>
-                </li>
-            </ul>
-        </nav>
-        <Outlet />
-    </div>
-}
+    return <>
+        <Box sx={{ height: "80vh", backgroundColor: "#ffffff" }}>
+            <Container maxWidth="md">
+                <Grid container rowSpacing={0} columnSpacing={2}>
+                    <Grid item xs={12} md={12}>
+                        <Typography component="h2" variant="h2">
+                            About Page
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12} md={12}>
+                        <Typography>
+                            texttexttexttexttexttexttexttexttexttexttexttexttext
+                        </Typography>
+                    </Grid>
+                </Grid>
+            </Container>
+        </Box>
+    </>;
+};

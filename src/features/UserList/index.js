@@ -1,8 +1,9 @@
-import { useAuth } from '../useHooks/useAuth';
+import { useAuth } from '../../useHooks/useAuth';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import Pagination from "./Pagination"
-import { Link } from "react-router-dom";
+import DataGrid from '../../components/DataGrid';
+import { columns } from "./columns"
+import { useNavigate } from "react-router-dom";
 
 export default function UserList() {
     const { getUserList } = useAuth();
@@ -10,8 +11,8 @@ export default function UserList() {
     useEffect(() => {
         getUserList();
     }, []);
-
-    const data = {
+    const navigate = useNavigate();
+    const dummyData = {
         ...userList,
         // add test data
         6: { id: 6, name: "mr.6" },
@@ -30,22 +31,14 @@ export default function UserList() {
     }
 
     return <>
-        <Pagination
-            // data must be an array
-            items={Object.values(data)}
-
-            // number of items on one page
-            pageSize={5}
-
-            // How to arrange items
-            mapFunc={(output, index) => {
-                return (
-                    <li key={index + 1}>
-                        <Link to={`/admin/user/${output.id}`}>
-                            {`[${output.id}] ${output.name} ${output.admin ? "(admin)" : ""}`}
-                        </Link>
-                    </li>
-                )
+        <DataGrid
+            columns={columns}
+            rows={Object.values(dummyData)}
+            onCellClick={(cell) => {
+                navigate(
+                    `/admin/user/${cell.id}`,
+                    { replace: true }
+                );
             }}
         />
     </>;

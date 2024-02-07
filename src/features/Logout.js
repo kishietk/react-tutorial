@@ -1,25 +1,26 @@
-import { Navigate } from "react-router-dom";
 import { useAuth } from '../useHooks/useAuth';
-import { useState } from "react";
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Button } from "@mui/material";
 
 export default function Logout() {
     const { logout } = useAuth();
-    const [isLogin, setIsLogin] = useState(true);
 
     const handleOnClick = async () => {
         try {
-            const success = await logout();
-            setIsLogin(!success);
+            await logout();
         }
         catch (e) {
             throw e;
         }
     };
 
-    return (
-        <>
-            <button onClick={handleOnClick}>Logout</button>
-            {!isLogin && <Navigate to={"/login"} replase />}
-        </>
-    );
-}
+    return <>
+        <Button
+            variant="outlined"
+            startIcon={<LogoutIcon />}
+            onClick={handleOnClick}
+        >
+            Logout
+        </Button>
+    </>;
+};

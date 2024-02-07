@@ -23,7 +23,6 @@ const logout = async () => {
 
         //redirect to '/login'
 
-        
         return successs;
     }
     catch (e) {
@@ -31,9 +30,20 @@ const logout = async () => {
     }
 }
 
+const signup = async (formData) => {
+    try {
+        // post
+        const res = await post('/register', formData);
+        return res;
+    } catch (e) {
+        throw e;
+    }
+}
+
 const authApi = {
     login,
     logout,
+    signup,
 };
 
 export default authApi;

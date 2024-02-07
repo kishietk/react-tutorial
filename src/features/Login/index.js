@@ -5,6 +5,8 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema';
 import RegisterInput from '../inputs/RegisterInput';
+import LoginIcon from '@mui/icons-material/Login';
+import { Button } from "@mui/material";
 
 export default function Login() {
     const methods = useForm({
@@ -42,7 +44,11 @@ export default function Login() {
                     propName="password"
                     labelText="Pass: "
                 />
-                <button type="submit">Login</button>
+                <Button
+                    variant="outlined"
+                    startIcon={<LoginIcon />}
+                    type="submit"
+                >Login</Button>
             </form>
         </FormProvider>
         {isLogin && <Navigate to='/home' replace />}

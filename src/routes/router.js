@@ -1,3 +1,4 @@
+import { useRoutes } from "react-router-dom";
 import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Login from "../pages/Login.js";
@@ -7,22 +8,19 @@ import User from "../pages/User.js"
 import UserList from "../pages/UserList.js"
 import NotFound from "../pages/NotFound.js";
 import FailedLogin from "../pages/FailedLogin.js";
-import ChildA from "../components/ChildA.js";
-import ChildB from "../components/ChildB.js";
-import ChildC from "../components/ChildC.js";
-import AuthLayout from "../layouts/auth/AuthLayout.js";
-import GuestLayout from "../layouts/guest/GuestLayout.js";
-import AdminLayout from "../layouts/admin/AdminLayout.js";
-import { useRoutes } from "react-router-dom";
+import Me from "../components/Me.js";
+import AuthLayout from "../layouts/AuthLayout.js";
+import GuestLayout from "../layouts/GuestLayout.js";
+import AdminLayout from "../layouts/AdminLayout.js";
 import GuestRoute from "./GuestRoute.js";
 import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
 import Admin from "../pages/Admin.js";
 import UserEditer from "../pages/UserEditer.js";
 import UserNameEditer from "../features/UserNameEditer/index.js";
-import UserEmailEditer from "../components/UserEmailEditer.js";
-import UserGroupsEditer from "../components/UserGroupsEditer.js";
-import UserPermissionsEditer from "../components/UserPermissionsEditer.js";
+import UserEmailEditer from "../features/UserEmailEditer.js";
+import UserGroupsEditer from "../features/UserGroupsEditer.js";
+import UserPermissionsEditer from "../features/UserPermissionsEditer.js";
 
 export default function Router() {
     return useRoutes([
@@ -49,28 +47,6 @@ export default function Router() {
                 {
                     path: "about",
                     element: <About />,
-                    children: [
-                        {
-                            index: true,
-                            element: <h2>About Page</h2>,
-                        },
-                        {
-                            path: 'child-a',
-                            element: <ChildA />,
-                        },
-                        {
-                            path: 'child-b',
-                            element: <ChildB />,
-                        },
-                        {
-                            path: 'child-c',
-                            element: <ChildC />,
-                        },
-                        {
-                            path: '*',
-                            element: <NotFound />,
-                        },
-                    ],
                 },
                 {
                     path: '*',
@@ -85,6 +61,10 @@ export default function Router() {
                 {
                     index: true,
                     element: <Home />,
+                },
+                {
+                    path: 'me',
+                    element: <Me />,
                 },
                 {
                     path: 'logout',
@@ -135,6 +115,10 @@ export default function Router() {
                                     path: ':id',
                                     element: <UserNameEditer />,
                                 },
+                                {
+                                    path: '*',
+                                    element: <NotFound />,
+                                },
                             ],
                         },
                         {
@@ -143,6 +127,10 @@ export default function Router() {
                                 {
                                     path: ':id',
                                     element: <UserEmailEditer />,
+                                },
+                                {
+                                    path: '*',
+                                    element: <NotFound />,
                                 },
                             ],
                         },
@@ -153,6 +141,10 @@ export default function Router() {
                                     path: ':id',
                                     element: <UserGroupsEditer />,
                                 },
+                                {
+                                    path: '*',
+                                    element: <NotFound />,
+                                },
                             ],
                         },
                         {
@@ -161,6 +153,10 @@ export default function Router() {
                                 {
                                     path: ':id',
                                     element: <UserPermissionsEditer />,
+                                },
+                                {
+                                    path: '*',
+                                    element: <NotFound />,
                                 },
                             ],
                         },

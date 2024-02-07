@@ -1,11 +1,11 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../features/Login/schema';
-import RegisterInput from '../features/inputs/RegisterInput';
+import schema from './Login/schema';
+import RegisterInput from './inputs/RegisterInput';
 import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 
-export default function UserGroupsEditer() {
+export default function UserPermissionsEditer() {
 
     // Get user data from url id
     let { id } = useParams();
@@ -14,7 +14,7 @@ export default function UserGroupsEditer() {
 
     return (
         <div>
-            <h2>UserGroupsEditer</h2>
+            <h2>UserPermissionsEditer</h2>
         </div>
     );
 };

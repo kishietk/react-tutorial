@@ -153,3 +153,19 @@
   font-weight: 600;
   font-size: 13px;
 }
+
+.edit-user-feature{
+  justify-content: center;
+}
+
+.edit-user-feature .item{
+  display: flex;
+  align-items: center;
+  height: 120px;
+}
+.edit-user-feature .item #label{
+  flex: 45%;
+}
+.edit-user-feature .item #input{
+  flex: 55%;
+}

@@ -9,14 +9,14 @@ export default function RegisterInput({ propName = "prop", labelText = "", passw
     } = useFormContext();
 
     return (
-        <div>
+        <div className='register-input'>
             <TextField
                 id={propName}
                 label={labelText}
                 {...register(propName, { required: true })}
                 type={password ? "password" : ""}
             />
-            <p>{errors[propName]?.message}</p>
+            {errors[propName]?.message && <p>{errors[propName]?.message}</p>}
             <br />
         </div>
     );

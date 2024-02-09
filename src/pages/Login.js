@@ -20,6 +20,5 @@ export default function Login() {
                 onClick={() => { handleItemClick("/signup") }}
             >Sign Up</Button>
         </div>
-
     </div>
 }

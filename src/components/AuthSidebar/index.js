@@ -17,7 +17,7 @@ export default function AuthSidebar() {
             {data.map((value, key) => (<div
                 key={key}
                 id={window.location.pathname === value.link ? "active" : ""}
-                className={"row"}
+                className={"sidebar-row"}
             >
                 {value.children
                     ? <SidebarOpenButton data={value} initOpen={true} />
@@ -25,5 +25,5 @@ export default function AuthSidebar() {
                 }
             </div>))}
         </List>
-    </div>
-}
+    </div>;
+};

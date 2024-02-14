@@ -12,7 +12,7 @@ export default function Login() {
         <h1>Log in Page</h1>
         <LoginFeature />
 
-        <div style={{ margin: "80px 0" }}>
+        <div className="m-5">
             <p>If you don't have an account, sign up </p>
             <Button
                 variant="outlined"

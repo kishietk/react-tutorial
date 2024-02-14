@@ -1,5 +1,5 @@
 import React from 'react'
-import RegisterInput from '../features/inputs/RegisterInput';
+import AuthInput from '../features/inputs/AuthInput';
 import { FormGroup, FormControlLabel } from '@material-ui/core';
 import { Checkbox } from "@mui/material";
 import { useState } from "react";
@@ -24,7 +24,7 @@ function InputWithCheckbox({ propName = "prop", labelText = "", password = false
             </FormGroup>
         </div>
         {checked && <div id='input'>
-            <RegisterInput
+            <AuthInput
                 propName={propName}
                 labelText={propName}
                 password={password}

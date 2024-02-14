@@ -4,7 +4,7 @@ import { useAuth } from '../../useHooks/useAuth';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema';
-import RegisterInput from '../inputs/RegisterInput';
+import AuthInput from '../inputs/AuthInput';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button } from "@mui/material";
 
@@ -20,13 +20,16 @@ export default function Login() {
     });
 
     const { login } = useAuth();
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLoggedIn, setisLoggedIn] = useState(false);
 
-    const onSubmit = async (data) => {
+    const handleFormSubmit = async (data) => {
         try {
             const { email, password } = data;
-            const success = await login(email, password);
-            setIsLogin(success);
+
+           //! const loginSuccessful = await login(email, password);
+           //! setisLoggedIn(loginSuccessful);
+
+            setisLoggedIn(true);
         }
         catch (e) {
             console.log(e);
@@ -35,14 +38,14 @@ export default function Login() {
 
     return <>
         <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)}>
-                <RegisterInput
-                    propName="email"
+            <form onSubmit={methods.handleSubmit(handleFormSubmit)}>
+                <AuthInput
+                    fieldName="email"
                     labelText="Email: "
                 />
-                <RegisterInput
-                    propName="password"
-                    labelText="Pass: "
+                <AuthInput
+                    fieldName="password"
+                    labelText="Password: "
                 />
                 <Button
                     variant="outlined"
@@ -51,6 +54,6 @@ export default function Login() {
                 >Login</Button>
             </form>
         </FormProvider>
-        {isLogin && <Navigate to='/home' replace />}
+        {isLoggedIn && <Navigate to='/home' replace />}
     </>;
 };

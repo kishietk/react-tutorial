@@ -29,9 +29,6 @@ export default function Admin() {
                             Admin Page
                         </Typography>
                     </Grid>
-
-                    <br /><br /><br /><br />
-
                     <Grid
                         container
                         justifyContent="center"

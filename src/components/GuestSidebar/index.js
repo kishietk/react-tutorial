@@ -13,15 +13,14 @@ export default function GuestSidebar() {
 
     return <div className="sidebar">
         <List
-            className="sidebar-list"
-            sx={{ width: '100%', maxWidth: 360, }}
+            sx={{ width: '100%', }}
             component="nav"
             aria-labelledby="nested-list-subheader"
         >
             {data.map((value, key) => (<div
                 key={key}
                 id={checkActiveLink(value.link) ? "active" : ""}
-                className={"row"}
+                className={"sidebar-row"}
             >
                 {value.children
                     ? <SidebarOpenButton data={value} initOpen={true} />
@@ -30,5 +29,4 @@ export default function GuestSidebar() {
             </div>))}
         </List>
     </div>
-}
-
+};

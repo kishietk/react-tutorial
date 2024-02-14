@@ -4,10 +4,10 @@ import { api } from "./api";
 const getMe = async () => {
     try {
         // Send request to the server
-        const res = await api.get('/me');
+        //!const res = await api.get('/me');
 
         // If success, return list of user
-        return res?.data?.data;
+        //!return res?.data?.data;
     }
     catch (e) {
         throw e;

@@ -3,7 +3,7 @@ import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Login from "../pages/Login.js";
 import Logout from "../pages/Logout.js";
-import SignUp from "../pages/SignUp.js";
+import SignUp from "../pages/SignUp.js"; 
 import User from "../pages/User.js"
 import UserList from "../pages/UserList.js"
 import NotFound from "../pages/NotFound.js";
@@ -15,12 +15,7 @@ import AdminLayout from "../layouts/AdminLayout.js";
 import GuestRoute from "./GuestRoute.js";
 import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
-import Admin from "../pages/Admin.js";
 import UserEditer from "../pages/UserEditer.js";
-import UserNameEditer from "../features/UserNameEditer/index.js";
-import UserEmailEditer from "../features/UserEmailEditer.js";
-import UserGroupsEditer from "../features/UserGroupsEditer.js";
-import UserPermissionsEditer from "../features/UserPermissionsEditer.js";
 
 export default function Router() {
     return useRoutes([
@@ -81,10 +76,6 @@ export default function Router() {
             element: <AdminRoute><AdminLayout /></AdminRoute>,
             children: [
                 {
-                    index: true,
-                    element: <Admin />,
-                },
-                {
                     path: 'userlist',
                     element: <UserList />,
                 },
@@ -107,58 +98,6 @@ export default function Router() {
                         {
                             path: ':id',
                             element: <UserEditer />,
-                        },
-                        {
-                            path: 'name',
-                            children: [
-                                {
-                                    path: ':id',
-                                    element: <UserNameEditer />,
-                                },
-                                {
-                                    path: '*',
-                                    element: <NotFound />,
-                                },
-                            ],
-                        },
-                        {
-                            path: 'email',
-                            children: [
-                                {
-                                    path: ':id',
-                                    element: <UserEmailEditer />,
-                                },
-                                {
-                                    path: '*',
-                                    element: <NotFound />,
-                                },
-                            ],
-                        },
-                        {
-                            path: 'groups',
-                            children: [
-                                {
-                                    path: ':id',
-                                    element: <UserGroupsEditer />,
-                                },
-                                {
-                                    path: '*',
-                                    element: <NotFound />,
-                                },
-                            ],
-                        },
-                        {
-                            path: 'permissions',
-                            children: [
-                                {
-                                    path: ':id',
-                                    element: <UserPermissionsEditer />,
-                                },
-                                {
-                                    path: '*',
-                                    element: <NotFound />,
-                                },
-                            ],
                         },
                         {
                             path: '*',

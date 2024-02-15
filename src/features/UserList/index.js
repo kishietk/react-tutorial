@@ -6,11 +6,11 @@ import { columns } from "./columns"
 import { useNavigate } from "react-router-dom";
 
 export default function UserList() {
-    // !const { getUserList } = useAuth();
-     const userList = useSelector((state) => state?.userList?.userList);
-    //! useEffect(() => {
-    //!    getUserList();
-    //! }, []);
+    const { getUserList } = useAuth();
+    const userList = useSelector((state) => state?.userList?.userList);
+    useEffect(() => {
+        getUserList();
+    }, []);
     const navigate = useNavigate();
     const dummyData = {
         ...userList,

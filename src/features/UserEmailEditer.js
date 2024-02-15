@@ -1,7 +1,7 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from '../features/Login/schema';
-import RegisterInput from '../features/inputs/RegisterInput';
+import schema from './Login/schema';
+import AuthInput from './inputs/AuthInput';
 import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 
@@ -23,6 +23,7 @@ export default function UserEmailEditer() {
     const onSubmit = async (data) => {
         try {
             //処理
+            
             console.log(data);
         }
         catch (e) {
@@ -35,7 +36,7 @@ export default function UserEmailEditer() {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <hr />
-                    <RegisterInput propName={"email"} />
+                    <AuthInput propName={"email"} />
                 </form>
             </FormProvider>
         </div>

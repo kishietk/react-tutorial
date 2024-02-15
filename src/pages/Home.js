@@ -1,7 +1,10 @@
 import Profile from "../features/UserProfile";
+import { Box } from "@mui/material";
 
 export default function Home() {
     return <div className="content">
-        <Profile />
+        <Box sx={{ height: "80vh"}}>
+            <Profile />
+        </Box>
     </div>;
-}
+};

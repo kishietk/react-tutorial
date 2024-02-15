@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 export default function AuthRoute({ ...props }) {
 
     // Get user login status from Redux
-    const isLogin = useSelector((state) => state?.auth?.isLogin);
+    // const isLogin = useSelector((state) => state?.auth?.isLogin);
+
+    //test
+    const isLogin = true;
 
     // If the user is not logged in, they will be redirected to "/login"
     if (!isLogin) return <Navigate to={"/login"} replace />

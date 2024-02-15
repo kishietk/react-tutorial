@@ -68,7 +68,7 @@ export function useAuth() {
 
             console.log(formData);
 
-            // Get Invitation Account herer
+            // Get Invitation Account here
             // const invitationToken = await authApi.getInvitation({});
 
             // Send the accessToken to API to logout

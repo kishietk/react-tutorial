@@ -12,7 +12,7 @@ function UserProfile() {
     return <>
         <div className='user-profile'>
             <h3>User Profile Feature</h3>
-            <p>hello, {user?.name} !</p>
+            <p>hello, {user?.name ?? "guest"} !</p>
         </div>
     </>
 }

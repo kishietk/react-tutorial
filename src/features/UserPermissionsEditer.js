@@ -1,7 +1,7 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './Login/schema';
-import RegisterInput from './inputs/RegisterInput';
+import AuthInput from './inputs/AuthInput';
 import { useSelector } from 'react-redux';
 import { useParams } from "react-router-dom";
 

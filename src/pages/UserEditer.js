@@ -1,4 +1,4 @@
-import UserEditerComponent from "../components/UserEditer"
+import UserEditerComponent from "../features/UserEditer"
 
 export default function UserEditer() {
 

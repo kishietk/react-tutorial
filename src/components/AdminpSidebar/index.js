@@ -17,7 +17,7 @@ export default function AdminSidebar() {
             {data.map((value, key) => (<div
                 key={key}
                 id={window.location.pathname === value.link ? "active" : ""}
-                className={"row"}
+                className={"sidebar-row"}
             >
                 {value.children
                     ? <SidebarOpenButton data={value} initOpen={true} />

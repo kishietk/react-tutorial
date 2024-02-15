@@ -1,155 +1,56 @@
 .app {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+  min-width: 640px;
   font-family: sans-serif;
   text-align: center;
   justify-content: center;
-  background-color: #ffffff;
   box-sizing: border-box;
 }
 
 .header{
   padding: 20px 0; 
-  background-color: #445560;
+  background-color: #2d3b45;
   color: #ffffff;
 }
 
 .fooder{
-  padding: 20px 0;  
-  background-color: #445560;
+  padding: 20px 0;    
+  background-color: #2d3b45;
   color: #ffffff;
 }
 
-.container{
+.main-container {
   display: flex;
-  min-height: 740px;
+  flex: 1;
 }
 
-.main{
-  display: grid;
-  width: calc(100% - 200px);
-}
-
-.content{
-  min-width: 400px;
-  max-width: 90%;
-  margin: 20px auto 20px auto;
-}
-
-/* user-list */
-.user-list{
-  font-size: 20px;
-}
-
-.user-list ul {
-  text-align: left;
-  min-height:540px;
-}
-
-.user-list ul li {
-  display: grid;
-  margin-right: 4em;
-  margin-bottom: 4em;
-  margin-top: 4em
-}
-
-.user-list ul li a {
-  text-decoration: none;
-}
-
-/* user */
-.user {
-  margin-bottom: 40px;
-}
-
-.user ul {
-  text-align: left;
-  margin-left: 2em;
-}
-
-.user ul li{
-  margin-bottom: 2em;
-}
-
-/* user-editer */
-.user-editer{
+/* main */
+.main {
+  width: calc(100% - 250px);
   display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.user-editer  ul {
-  text-align: left;
-  margin-left: 2em;
-}
-
-.user-editer  ul li{
-  margin-bottom: 4em;
-}
-
-.user-editer  ul li  ul li{
-  margin-bottom: 1em;
-}
-
-.redirect-button{
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.register-input{
-  margin: 20px 0;
-} 
-
-/* Sidebar */
-.sidebar {
-  width: 250px;
-  background: #2d445d;
-}
-
-.sidebar-list {
-  height: auto;
-  padding: 0;
-  width: 100%;
-}
-
-.sidebar-list .row {
-  background: #2d445d;
-  color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
 }
 
-.sidebar-list .row :hover {
+/* sidebar */
+.sidebar {
+  width:250px;
+  background: #223447;
+  color: rgb(255, 255, 255);
+}
+
+.sidebar .sidebar-row :hover {
   cursor: pointer;
-  background-color: #3b627a;
+  background-color: #294455;
 }
 
-.sidebar-list #active {
-  background-color: #3b627a;
+.sidebar #active {
+  background-color: #294455;
 }
 
-.row #icon {
-  flex: 30%;
-  display: grid;
-  place-items: center;
-}
-
-.row #title {
-  flex: 70%;
-  margin-right: 2em;
-}
-
-.sidebar-my-icon {
-  padding-top: 20px;
-  padding-bottom: 15px;
-  text-align: center;
-}
-
-.sidebar-my-icon img {
-  width: 100px;
-}
-
-.sidebar-my-icon p {
-  color: white;
-  font-weight: 600;
-  font-size: 13px;
+/* text-field */
+.text-field{
+  margin-bottom: 20px;
 }

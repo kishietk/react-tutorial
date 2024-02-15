@@ -2,7 +2,7 @@ import { useAuth } from '../../useHooks/useAuth';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema';
-import RegisterInput from '../inputs/RegisterInput';
+import AuthInput from '../inputs/AuthInput';
 import { Button } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -33,24 +33,24 @@ export default function SignUp() {
     return <div className='signup-feature'>
         <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)}>
-                <RegisterInput
+                <AuthInput
                     propName={"name"}
                     labelText='name'
                 />
-                <RegisterInput
+                <AuthInput
                     propName={"username"}
                     labelText='username'
                 />
-                <RegisterInput
+                <AuthInput
                     propName={"email"}
                     labelText='email'
                 />
-                <RegisterInput
+                <AuthInput
                     propName={"password"}
                     labelText='password'
                     password={true}
                 />
-                <RegisterInput
+                <AuthInput
                     propName={"passwordConfirmation"}
                     labelText='passwordConfirmation'
                     password={true}

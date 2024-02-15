@@ -48,7 +48,7 @@ export default function SidebarOpenButton({ data, initOpen = false }) {
         {children.map((value, key) => (<div
           key={key}
           id={window.location.pathname === value.link ? "active" : ""}
-          className={"row"}
+          className={"sidebar-row"}
         >
           <div sx={{ margin: "0 10px" }}>
             {value.children

@@ -13,7 +13,7 @@ function SidebarMyIcon() {
       <div onClick={() => handleItemClick("me")}>
         <img src={user?.avatar ?? DefaultIcon} />
       </div>
-      <p>{user?.email ?? "Email address not set."}</p>
+      <p>{user?.email ?? "Email address does not set."}</p>
     </div>
   );
 }

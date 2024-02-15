@@ -6,13 +6,13 @@ import {
 } from "@mui/material";
 
 export default function About() {
-    return <>
-        <Box sx={{ height: "80vh", backgroundColor: "#ffffff" }}>
+    return <div className="content">
+        <Box sx={{ height: "40vh"}}>
             <Container maxWidth="md">
                 <Grid container rowSpacing={0} columnSpacing={2}>
                     <Grid item xs={12} md={12}>
                         <Typography component="h2" variant="h2">
-                            About Page
+                            Information Page
                         </Typography>
                     </Grid>
                     <Grid item xs={12} md={12}>
@@ -23,5 +23,5 @@ export default function About() {
                 </Grid>
             </Container>
         </Box>
-    </>;
+    </div>;
 };

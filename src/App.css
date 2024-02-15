@@ -1,100 +1,56 @@
 .app {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+  min-width: 640px;
   font-family: sans-serif;
   text-align: center;
   justify-content: center;
-  background-color: #ffffff;
-}
-
-.fooder{
-  padding: 20px 0;
-  background-color: rgb(144, 144, 144);
+  box-sizing: border-box;
 }
 
 .header{
-  padding: 20px 0;
-  background-color:  rgb(144, 144, 144);
+  padding: 20px 0; 
+  background-color: #2d3b45;
+  color: #ffffff;
 }
 
-.container{
+.fooder{
+  padding: 20px 0;    
+  background-color: #2d3b45;
+  color: #ffffff;
+}
+
+.main-container {
   display: flex;
-  min-height: 740px;
+  flex: 1;
 }
 
-.main{
-  display: grid;
-  width: calc(100% - 200px);
-}
-
-.content{
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* nav-bar */
-.nav-bar {
+/* main */
+.main {
+  width: calc(100% - 250px);
   display: flex;
-  max-width: 200px;
-  font-size: 20px;
-  background-color: #424242;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-bar ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-.nav-bar ul li {
-  display: inline-block;
-  margin-right: 2em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-.nav-bar ul li:hover {
+/* sidebar */
+.sidebar {
+  width:250px;
+  background: #223447;
   color: rgb(255, 255, 255);
-  background-color: rgb(203, 203, 203);
 }
 
-.content .nav-bar {
-  display: flex;
-  max-width: 100%;
-  font-size: 18px;
-  background-color: #d1d1d1;
+.sidebar .sidebar-row :hover {
+  cursor: pointer;
+  background-color: #294455;
 }
 
-/* user-list */
-.user-list{
-  font-size: 20px;
+.sidebar #active {
+  background-color: #294455;
 }
 
-.user-list ul {
-  text-align: left;
-  min-height:540px;
-}
-
-.user-list ul li {
-  display: grid;
-  margin-right: 4em;
-  margin-bottom: 4em;
-  margin-top: 4em
-}
-
-.user-list ul li a {
-  text-decoration: none;
-}
-
-/* user */
-.user {
-  margin-bottom: 40px;
-}
-
-.user ul {
-  text-align: left;
-  margin-left: 2em;
-}
-
-.user ul li{
-  margin-bottom: 2em;
+/* text-field */
+.text-field{
+  margin-bottom: 20px;
 }

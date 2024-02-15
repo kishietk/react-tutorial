@@ -26,8 +26,8 @@ export default function Login() {
         try {
             const { email, password } = data;
 
-           const loginSuccessful = await login(email, password);
-           setisLoggedIn(loginSuccessful);
+            const loginSuccessful = await login(email, password);
+            setisLoggedIn(loginSuccessful);
 
             setisLoggedIn(true);
         }

@@ -3,12 +3,11 @@ import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Login from "../pages/Login.js";
 import Logout from "../pages/Logout.js";
-import SignUp from "../pages/SignUp.js"; 
-import User from "../pages/User.js"
+import SignUp from "../pages/SignUp.js";
 import UserList from "../pages/UserList.js"
 import NotFound from "../pages/NotFound.js";
 import FailedLogin from "../pages/FailedLogin.js";
-import Me from "../components/Me.js";
+import Me from "../pages/Me.js";
 import AuthLayout from "../layouts/AuthLayout.js";
 import GuestLayout from "../layouts/GuestLayout.js";
 import AdminLayout from "../layouts/AdminLayout.js";
@@ -78,19 +77,6 @@ export default function Router() {
                 {
                     path: 'userlist',
                     element: <UserList />,
-                },
-                {
-                    path: 'user',
-                    children: [
-                        {
-                            path: ':id',
-                            element: <User />,
-                        },
-                        {
-                            path: '*',
-                            element: <NotFound />,
-                        },
-                    ],
                 },
                 {
                     path: 'edituser',

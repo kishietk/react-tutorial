@@ -34,6 +34,11 @@
   align-items: center;
 }
 
+/* content */
+.content {
+  width: 80%;
+}
+
 /* sidebar */
 .sidebar {
   width:250px;

@@ -14,7 +14,7 @@ export default function UserList() {
     const navigate = useNavigate();
     const dummyData = {
         ...userList,
-        // add test data
+        // add test data for pagenation practice
         6: { id: 6, name: "mr.6" },
         7: { id: 7, name: "mr.7" },
         8: { id: 8, name: "mr.8" },
@@ -36,7 +36,7 @@ export default function UserList() {
             rows={Object.values(dummyData)}
             onCellClick={(cell) => {
                 navigate(
-                    `/admin/user/${cell.id}`,
+                    `/admin/edituser/${cell.id}`,
                     { replace: true }
                 );
             }}

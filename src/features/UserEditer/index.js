@@ -3,12 +3,11 @@ import { useParams } from "react-router-dom";
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './schema';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import BackPageButton from '../../components/BackPageButton';
 import * as React from 'react';
-import { FormGroup, FormControlLabel } from '@material-ui/core';
-import { Button, Checkbox } from "@mui/material";
-import InputWithCheckbox from '../../components/InputWithCheckbox';
+import { Button } from "@mui/material";
+import AuthInput from '../inputs/AuthInput';
+import SaveAltIcon from '@mui/icons-material/SaveAlt';
 
 export default function UserEditer() {
 
@@ -21,7 +20,12 @@ export default function UserEditer() {
         resolver: yupResolver(schema),
         criteriaMode: 'all',
         reValidateMode: 'onSubmit',
-        defaultValues: { },
+        defaultValues: {
+            name: user.name,
+            username: user.username,
+            phone: user.phone,
+            aboutMe: user.aboutMe,
+        },
     });
 
     // events
@@ -34,54 +38,46 @@ export default function UserEditer() {
         }
     };
 
-    return <div className='edit-user-feature'>
+    return <>
         <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)}>
-                <FormGroup row={true}>
-                    <FormControlLabel
-                        label={`id: ${user?.id}`}
-                        control={<Checkbox disabled />}
-                    />
-                </FormGroup>
-                <InputWithCheckbox
-                    propName={"name"}
-                    labelText={user?.name}
-                />
-                <InputWithCheckbox
-                    propName={"username"}
-                    labelText={user?.username}
-                />
-                <InputWithCheckbox
-                    propName={"email"}
-                    labelText={user?.email}
-                />
-                <InputWithCheckbox
-                    propName={"phone"}
-                    labelText={user?.phone}
-                />
-                <InputWithCheckbox
-                    propName={"timezone"}
-                    labelText={user?.timezone}
-                />
-                <InputWithCheckbox
-                    propName={"password"}
-                    labelText={user?.password}
-                    password={true}
-                />
-                <br />
+                <div className="container-fluid">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 col-sm-12">
+                            <AuthInput
+                                fieldName="name"
+                                labelText="name: "
+                            />
+                            <AuthInput
+                                fieldName="username"
+                                labelText="username: "
+                            />
+                            <AuthInput
+                                fieldName="phone"
+                                labelText="phone: "
+                            />
+                        </div>
+                        <div className="col-md-6 col-sm-12">
+                            <span>Write something about you</span>
+                            <AuthInput
+                                minRows="10"
+                                fieldName="aboutMe"
+                                labelText=""
+                                width="100%"
+                            />
+                        </div>
+                    </div>
+                </div>
                 <Button
                     variant="outlined"
+                    startIcon={< SaveAltIcon />}
                     type="submit"
-                    startIcon={<AccountCircleIcon />}
-                >
-                    Edit user data
-                </Button>
+                >Save Changes</Button>
             </form>
         </FormProvider>
-
         <BackPageButton
             buttonText='back'
             specifiedPath={`/admin/user/${id}`}
         />
-    </div>;
+    </>;
 };

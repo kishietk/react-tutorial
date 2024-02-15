@@ -1,15 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import UserComponent from "../components/User"
-import BackPageButton from './BackPageButton';
+import BackPageButton from '../components/BackPageButton';
 
-function Me() {
+export default function Me() {
     const me = useSelector((state) => state?.auth?.user);
 
-    return <div>
+    return <div className='content'>
         <UserComponent user={me} />
         <BackPageButton />
     </div>
-}
-
-export default Me;
+};

@@ -1,14 +1,19 @@
 import * as yup from 'yup';
 
-const schema = yup.object().shape({ 
-    email: yup
+const schema = yup.object().shape({
+    name: yup
         .string()
-        .email('メールアドレスの形式ではありません。')
+        .max(32, '32文字以下を入力してください。')
         .required('入力必須の項目です。'),
-    password: yup
+    username: yup
         .string()
-        .min(8, '8文字以上入力してください。')
-        .max(32, '32文字以下を入力してください。'),
+        .max(32, '32文字以下を入力してください。')
+        .required('入力必須の項目です。'),
+    aboutMe: yup
+        .string()
+        .max(400, '400文字以下を入力してください。'),
+    phone: yup
+        .number()
 });
 
 export default schema;

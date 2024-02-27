@@ -126,6 +126,16 @@ export function useAuth() {
         };
     };
 
+    const updateProfile = async (formData) => {
+        try {
+            const res = await userApi.updateProfile(formData);
+            return res;
+        }
+        catch (error) {
+            throw error;
+        };
+    };
+
     return {
         login,
         logout,
@@ -133,5 +143,6 @@ export function useAuth() {
         getMe,
         getUserList,
         getUserById,
+        updateProfile,
     };
 }

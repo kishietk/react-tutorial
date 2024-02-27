@@ -11,16 +11,16 @@ export default function AuthInput({
 
     const { register, formState: { errors } } = useFormContext();
 
-    return <div className='text-field' style={{ width: width }}> 
+    return <div className='text-field' style={{ width: width }}>
         <TextField
-            multiline
             minRows={minRows}
             id={fieldName}
             label={labelText}
             {...register(fieldName, { required: true })}
             type={isPasswordField ? "password" : ""}
+            multiline
             fullWidth
         />
-        {errors[fieldName]?.message && <p>{errors[fieldName]?.message}</p>}
+        {errors[fieldName] && <p>{errors[fieldName].message}</p>}
     </div>;
 };

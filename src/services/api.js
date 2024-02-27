@@ -53,8 +53,19 @@ function sendGet(url, data = {}, params = {}, options = {}) {
     return sendRequest(config);
 };
 
-function sendPut() {
-    return null;
+function sendPut(url, data = {}, options = {}) {
+    // HTTP request configuration
+    const config = {
+        method: 'put',
+        url: url,
+        data: data,
+        ...options,
+        headers: {
+            'Content-Type': 'application/json',
+            ...options?.headers,
+        },
+    };
+    return sendRequest(config);
 };
 
 function sendDelete() {

@@ -60,7 +60,9 @@ export default function SignUp() {
                     variant="outlined"
                     type="submit"
                     startIcon={<AccountCircleIcon />}
-                >Sign Up</Button>
+                >
+                    Sign Up
+                </Button>
             </form>
         </FormProvider>
     </div>;

@@ -1,8 +1,8 @@
 import React from "react";
 import { data } from "./data";
 import List from '@mui/material/List';
-import SidebarButton from '../SidebarButton';
-import SidebarOpenButton from '../SidebarOpenButton';
+import ListItem from '../ListItem';
+import OpenableListItem from '../OpenableListItem';
 
 export default function GuestSidebar() {
     const checkActiveLink = (link) => {
@@ -23,8 +23,8 @@ export default function GuestSidebar() {
                 className={"sidebar-row"}
             >
                 {value.children
-                    ? <SidebarOpenButton data={value} initOpen={true} />
-                    : <SidebarButton data={value} />
+                    ? <OpenableListItem data={value} initOpen={true} />
+                    : <ListItem data={value} />
                 }
             </div>))}
         </List>

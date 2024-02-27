@@ -1,4 +1,4 @@
-import Profile from "../features/UserProfile";
+import Profile from "../features/components/homes/Plofile";
 import { Box } from "@mui/material";
 
 export default function Home() {

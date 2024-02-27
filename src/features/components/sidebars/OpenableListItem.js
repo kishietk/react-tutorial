@@ -8,8 +8,9 @@ import Collapse from '@mui/material/Collapse';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import List from '@mui/material/List';
-import SidebarButton from "./SidebarButton";
-export default function SidebarOpenButton({ data, initOpen = false }) {
+import ListItem from "./ListItem";
+
+export default function OpenableListItem({ data, initOpen = false }) {
   const [open, setOpen] = useState(initOpen);
   const handleClick = () => {
     setOpen(!open);
@@ -33,9 +34,8 @@ export default function SidebarOpenButton({ data, initOpen = false }) {
         <IconComponent sx={sx} />
       </ListItemIcon>
       <ListItemText primary={text} />
-
     </ListItemButton>
-
+    
     <Collapse
       in={open}
       timeout="auto"
@@ -52,8 +52,8 @@ export default function SidebarOpenButton({ data, initOpen = false }) {
         >
           <div sx={{ margin: "0 10px" }}>
             {value.children
-              ? <SidebarOpenButton data={value} initOpen={true} />
-              : <SidebarButton data={value} />
+              ? <OpenableListItem data={value} initOpen={true} />
+              : <ListItem data={value} />
             }
           </div>
         </div>))}

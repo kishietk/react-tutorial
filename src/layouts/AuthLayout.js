@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header.js";
-import Fooder from "../components/Footer.js";
-import Sidebar from "../components/AuthSidebar"
+import Header from "../features/Header.js";
+import Fooder from "../features/Footer.js";
+import Sidebar from "../features/components/sidebars/AuthSidebar";
 
 export default function AuthLayout() {
     return <div className="app">

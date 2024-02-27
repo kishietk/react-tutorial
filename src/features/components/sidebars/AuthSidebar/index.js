@@ -1,9 +1,9 @@
 import React from "react";
 import { data } from "./data";
-import SidebarMyIcon from "../SidebarMyIcon";
+import SidebarMyIcon from "../Icon";
 import List from '@mui/material/List';
-import SidebarButton from '../SidebarButton';
-import SidebarOpenButton from '../SidebarOpenButton';
+import ListItem from '../ListItem';
+import OpenableListItem from '../OpenableListItem';
 
 export default function AuthSidebar() {
     return <div className="sidebar">
@@ -20,8 +20,8 @@ export default function AuthSidebar() {
                 className={"sidebar-row"}
             >
                 {value.children
-                    ? <SidebarOpenButton data={value} initOpen={true} />
-                    : <SidebarButton data={value} />
+                    ? <OpenableListItem data={value} initOpen={true} />
+                    : <ListItem data={value} />
                 }
             </div>))}
         </List>

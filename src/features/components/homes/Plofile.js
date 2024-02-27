@@ -1,8 +1,8 @@
-import { useAuth } from '../useHooks/useAuth';
+import { useAuth } from '../../../useHooks/useAuth';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-function UserProfile() {
+function Profile() {
     const { getMe } = useAuth();
     const user = useSelector((state) => state?.auth?.user);
     useEffect(() => {
@@ -10,11 +10,9 @@ function UserProfile() {
     }, []);
 
     return <>
-        <div className='user-profile'>
-            <h3>User Profile Feature</h3>
-            <p>hello, {user?.name ?? "guest"} !</p>
-        </div>
+        <h3>User Profile Feature</h3>
+        <p>hello, {user?.name ?? "guest"} !</p>
     </>
 }
 
-export default UserProfile;
+export default Profile;

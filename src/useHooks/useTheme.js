@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { indigo, blueGrey, grey } from '@mui/material/colors';
+import { indigo, blueGrey, blue } from '@mui/material/colors';
 import { useState } from 'react';
 
 export const useTheme = () => {
@@ -22,12 +22,12 @@ export const useTheme = () => {
                     },
                 }
                 : {
-                    primary: grey,
-                    secondary: grey,
+                    primary: blue,
+                    secondary: blueGrey,
                     divider: blueGrey[200],
                     background: {
                         default: blueGrey[900],
-                        paper: grey[600],
+                        paper: blueGrey[800],
                     },
                     text: {
                         primary: '#fff',

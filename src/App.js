@@ -4,7 +4,7 @@ import Router from "./routes/router.js";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
-import ColorModeContext from './context/ColorModeContext';
+import ColorModeContext from "./utils/context/ColorModeContext.js";
 import { useTheme } from './useHooks/useTheme.js';
 
 export default function App() {

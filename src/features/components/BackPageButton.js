@@ -23,7 +23,7 @@ export default function BackPageButton({ times = 1, buttonText = "Back", specifi
         navigate(newPath, { replace: true });
     };
 
-    return <div style={{ marginTop: "40px" }}>
+    return <div>
         <Button
             variant="outlined"
             startIcon={<ArrowBackIosNewIcon />}

@@ -5,7 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import DraftsIcon from '@mui/icons-material/Drafts';
 import { useNavigate } from "react-router-dom";
 
-export default function SidebarButton({ data }) {
+export default function ListItem({ data }) {
 
   const navigate = useNavigate();
   const handleClick = (link) => {

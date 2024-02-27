@@ -31,7 +31,7 @@
 // }
 
 import { useNavigate } from "react-router-dom";
-import CustomThemeColor from "./common/CustomThemeColor";
+import CustomThemeColor from "../utils/CustomThemeColor";
 import PetsIcon from '@mui/icons-material/Pets';
 
 export default function Header() {

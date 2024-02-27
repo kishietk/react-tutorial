@@ -1,9 +1,9 @@
 import React from "react";
-import SidebarMyIcon from "../SidebarMyIcon";
-import List from '@mui/material/List';
-import SidebarButton from '../SidebarButton';
-import SidebarOpenButton from '../SidebarOpenButton';
 import { data } from "./data";
+import SidebarMyIcon from "../Icon";
+import List from '@mui/material/List'; 
+import ListItem from '../ListItem';
+import OpenableListItem from '../OpenableListItem';
 
 export default function AdminSidebar() {
     return <div className="sidebar">
@@ -20,8 +20,8 @@ export default function AdminSidebar() {
                 className={"sidebar-row"}
             >
                 {value.children
-                    ? <SidebarOpenButton data={value} initOpen={true} />
-                    : <SidebarButton data={value} />
+                    ? <OpenableListItem data={value} initOpen={true} />
+                    : <ListItem data={value} />
                 }
             </div>))}
         </List>

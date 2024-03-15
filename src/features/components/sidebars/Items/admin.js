@@ -15,7 +15,7 @@ export const admin = [
     },
     {
         title: "Log Out",
-        link: "/home/logout",
+        link: "/logout",
         icon: {
             material: LogoutIcon,
             sx: { color: color }

@@ -49,16 +49,24 @@ export default function Router() {
             ],
         },
         {
-            path: 'home',
             element: <AuthRoute><AuthLayout /></AuthRoute>,
             children: [
                 {
-                    index: true,
-                    element: <Home />,
-                },
-                {
-                    path: 'me',
-                    element: <MyProfile />,
+                    path: 'home',
+                    children: [
+                        {
+                            index: true,
+                            element: <Home />,
+                        },
+                        {
+                            path: 'me',
+                            element: <MyProfile />,
+                        },
+                        {
+                            path: '*',
+                            element: <NotFound />,
+                        },
+                    ],
                 },
                 {
                     path: 'logout',

@@ -45,10 +45,22 @@ const getUserById = async (id) => {
     }
 };
 
+const updateProfile = async (formData) => {
+    try {
+        // put 
+        const res = await api.put('/me', formData);
+        return res;
+    }
+    catch (e) {
+        throw e;
+    }
+};
+
 const userApi = {
     getMe: getMe,
     getUserList: getUserList,
     getUserById: getUserById,
+    updateProfile: updateProfile,
 };
 
 export default userApi;

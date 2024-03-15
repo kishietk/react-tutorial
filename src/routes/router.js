@@ -3,19 +3,18 @@ import Home from "../pages/Home.js";
 import About from "../pages/About.js";
 import Login from "../pages/Login.js";
 import Logout from "../pages/Logout.js";
-import SignUp from "../pages/SignUp.js"; 
-import User from "../pages/User.js"
-import UserList from "../pages/UserList.js"
+import SignUp from "../pages/SignUp.js";
 import NotFound from "../pages/NotFound.js";
 import FailedLogin from "../pages/FailedLogin.js";
-import Me from "../components/Me.js";
+import MyProfile from "../pages/MyProfile.js";
 import AuthLayout from "../layouts/AuthLayout.js";
 import GuestLayout from "../layouts/GuestLayout.js";
 import AdminLayout from "../layouts/AdminLayout.js";
 import GuestRoute from "./GuestRoute.js";
 import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
-import UserEditer from "../pages/UserEditer.js";
+import UserList from "../pages/UserList";
+import UserProfile from "../pages/UserProfile";
 
 export default function Router() {
     return useRoutes([
@@ -59,7 +58,7 @@ export default function Router() {
                 },
                 {
                     path: 'me',
-                    element: <Me />,
+                    element: <MyProfile />,
                 },
                 {
                     path: 'logout',
@@ -72,32 +71,18 @@ export default function Router() {
             ],
         },
         {
-            path: 'admin',
             element: <AdminRoute><AdminLayout /></AdminRoute>,
             children: [
                 {
                     path: 'userlist',
-                    element: <UserList />,
-                },
-                {
-                    path: 'user',
                     children: [
                         {
-                            path: ':id',
-                            element: <User />,
+                            index: true,
+                            element: <UserList />,
                         },
                         {
-                            path: '*',
-                            element: <NotFound />,
-                        },
-                    ],
-                },
-                {
-                    path: 'edituser',
-                    children: [
-                        {
                             path: ':id',
-                            element: <UserEditer />,
+                            element: <UserProfile />,
                         },
                         {
                             path: '*',

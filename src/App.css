@@ -31,7 +31,12 @@
   width: calc(100% - 250px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 40px;
+}
+
+/* content */
+.content {
+  width: 80%;
 }
 
 /* sidebar */
@@ -52,5 +57,5 @@
 
 /* text-field */
 .text-field{
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }

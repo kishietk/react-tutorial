@@ -6,12 +6,12 @@ export default function AuthInput({
     labelText = "",
     isPasswordField = false,
     minRows = "1",
-    width = "100%"
+    width ="100%",
 }) {
 
     const { register, formState: { errors } } = useFormContext();
 
-    return <div className='text-field' style={{ width: width }}>
+    return <div className='text-field'>
         <TextField
             minRows={minRows}
             id={fieldName}
@@ -19,6 +19,7 @@ export default function AuthInput({
             {...register(fieldName, { required: true })}
             type={isPasswordField ? "password" : ""}
             multiline
+            style={{ width: width }}
             fullWidth
         />
         {errors[fieldName] && <p>{errors[fieldName].message}</p>}

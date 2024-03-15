@@ -13,6 +13,8 @@ import AdminLayout from "../layouts/AdminLayout.js";
 import GuestRoute from "./GuestRoute.js";
 import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
+import UserList from "../pages/UserList";
+import UserProfile from "../pages/UserProfile";
 
 export default function Router() {
     return useRoutes([
@@ -69,31 +71,30 @@ export default function Router() {
             ],
         },
         {
-            path: 'admin',
             element: <AdminRoute><AdminLayout /></AdminRoute>,
-            // children: [
-            //     {
-            //         path: 'userlist',
-            //         element: <UserList />,
-            //     },
-            //     {
-            //         path: 'edituser',
-            //         children: [
-            //             {
-            //                 path: ':id',
-            //                 element: <UserEditer />,
-            //             },
-            //             {
-            //                 path: '*',
-            //                 element: <NotFound />,
-            //             },
-            //         ],
-            //     },
-            //     {
-            //         path: '*',
-            //         element: <NotFound />,
-            //     },
-            // ],
+            children: [
+                {
+                    path: 'userlist',
+                    children: [
+                        {
+                            index: true,
+                            element: <UserList />,
+                        },
+                        {
+                            path: ':id',
+                            element: <UserProfile />,
+                        },
+                        {
+                            path: '*',
+                            element: <NotFound />,
+                        },
+                    ],
+                },
+                {
+                    path: '*',
+                    element: <NotFound />,
+                },
+            ],
         },
         {
             path: '*',

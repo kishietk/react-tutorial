@@ -1,8 +1,8 @@
-import { useAuth } from '../../useHooks/useAuth';
+import { useAuth } from '../useHooks/useAuth';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import schema from './schema';
-import AuthInput from '../inputs/AuthInput';
+import schema from '../utils/schemas/authes/signupForm';
+import AuthInput from './inputs/AuthInput';
 import { Button } from "@mui/material";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
@@ -34,26 +34,31 @@ export default function SignUp() {
         <FormProvider {...methods}>
             <form onSubmit={methods.handleSubmit(onSubmit)}>
                 <AuthInput
-                    propName={"name"}
+                    propName="name"
                     labelText='name'
+                    width='400px'
                 />
                 <AuthInput
-                    propName={"username"}
+                    propName="username"
                     labelText='username'
+                    width='400px'
                 />
                 <AuthInput
-                    propName={"email"}
+                    propName="email"
                     labelText='email'
+                    width='400px'
                 />
                 <AuthInput
-                    propName={"password"}
+                    propName="password"
                     labelText='password'
                     password={true}
+                    width='400px'
                 />
                 <AuthInput
-                    propName={"passwordConfirmation"}
+                    propName="passwordConfirmation"
                     labelText='passwordConfirmation'
                     password={true}
+                    width='400px'
                 />
                 <br />
                 <Button

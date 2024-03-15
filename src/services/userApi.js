@@ -47,7 +47,7 @@ const getUserById = async (id) => {
 
 const updateProfile = async (formData) => {
     try {
-        // put
+        // put 
         const res = await api.put('/me', formData);
         return res;
     }

@@ -3,7 +3,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import InfoIcon from '@mui/icons-material/Info';
 
 const color = "#FFFFFF";
-export const data = [
+export const guest = [
     {
         title: "Home", 
         link: "/home",

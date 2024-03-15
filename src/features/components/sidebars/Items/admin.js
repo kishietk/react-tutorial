@@ -4,7 +4,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 
 const color = "#FFFFFF";
-export const data = [
+export const admin = [
     {
         title: "Home",
         link: "/home",
@@ -30,7 +30,7 @@ export const data = [
         children: [
             {
                 title: "User List",
-                link: "/admin/userlist",
+                link: "/userlist",
                 icon: {
                     material: PeopleIcon,
                     sx: { color: color }

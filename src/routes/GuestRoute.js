@@ -1,13 +1,15 @@
 import { Navigate } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import isTokenValid from "../utils/isTokenValid";
 
 // Protect the guest layout
 export default function GuestRoute({ ...props }) {
-
-    // Get user login status from Redux
-    const isLogin = useSelector((state) => state?.auth?.isLogin);
+    
+    // get access token from local
+    const accessToken = localStorage.getItem('accessToken');
+    const expiresAt = localStorage.getItem('expiresAt');
+    const isValid = isTokenValid({ accessToken, expiresAt });
 
     // If the user is logged in, they will be redirected to "/home"
-    if (isLogin) return <Navigate to={"/home"} replace />
+    if (isValid) return <Navigate to={"/home"} replace />
     return props.children;
 }

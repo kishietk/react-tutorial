@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "../features/Header.js";
 import Fooder from "../features/Footer.js";
-import Sidebar from "../features/components/sidebars/AdminSidebar";
+import Sidebar from "../features/components/sidebars";
 
 export default function AdminLayout() {
     return <div className="app">
         <Header />
         <div className="main-container">
-            <Sidebar />
+            <Sidebar role="admin"/>
             <div className="main">
                 <Outlet />
             </div>

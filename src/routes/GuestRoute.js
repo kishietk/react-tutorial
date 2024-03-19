@@ -4,7 +4,6 @@ import isTokenValid from "../utils/isTokenValid";
 // Protect the guest layout
 export default function GuestRoute({ ...props }) {
     
-    // get access token from local
     const accessToken = localStorage.getItem('accessToken');
     const expiresAt = localStorage.getItem('expiresAt');
     const isValid = isTokenValid({ accessToken, expiresAt });

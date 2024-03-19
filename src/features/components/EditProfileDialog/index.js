@@ -24,7 +24,7 @@ export default function EditProfileDialog({ reftch, openButtonText = "open", sta
             setMessage(res?.message);
             setOpen(false);
         }
-        catch (e) { console.log(e); }
+        catch (e) { throw e; }
     };
 
     return <>
@@ -48,9 +48,7 @@ export default function EditProfileDialog({ reftch, openButtonText = "open", sta
                 handleClose={handleClose}
                 handleOnUpdate={handleOnUpdate}
             />
-
             {isLoading && <Loading />}
-            {error && <Alert severity="error">{error.message}</Alert>}
         </Dialog>
     </>;
 }

@@ -1,4 +1,4 @@
-import { Grid, Button, Alert } from '@mui/material';
+import { Grid, Button } from '@mui/material';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from '../../../../utils/schemas/users/updateMyProfileForm/general';
@@ -6,9 +6,6 @@ import AuthInput from '../../../inputs/AuthInput';
 import transformError from './transformError';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import CloseIcon from '@mui/icons-material/Close';
-import { useGetMeQuery } from '../../../../redux/api/userSlice';
-import Loading from '../../../../components/Loading';
-import { useEffect } from 'react';
 
 function UpdateGeneralInfoForm() {
     return <Grid container spacing={4} mt={1}>
@@ -58,7 +55,7 @@ export default function UpdateGeneralInfo({ user, handleOnUpdate, handleClose })
             await handleOnUpdate(formData);
         }
         catch (error) {
-            const res = error?.response?.data?.error;
+            const res = error?.data?.error;
             const transformedError = transformError(res);
             transformedError.forEach(e => {
                 setError(e.name, {

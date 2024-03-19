@@ -25,12 +25,6 @@ export const authApi = createApi({
                 method: 'POST',
             }),
         }),
-        signup: builder.mutation({
-            query: (formData) => ({
-                url: '/register',
-                method: 'POST',
-            }),
-        }),
     }),
 });
 

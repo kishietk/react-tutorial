@@ -41,12 +41,12 @@ export const userApi = createApi({
             }),
             transformResponse: (response) => {
                 const items = response?.data?.items;
-                const sortedArray = Object.values(items).sort((a, b) => a.id - b.id);
-                const transformedObj = sortedArray.reduce((acc, obj) => {
+                const sortedById = Object.values(items).sort((a, b) => a.id - b.id);
+                const transformed = sortedById.reduce((acc, obj) => {
                     acc[obj.id] = obj;
                     return acc;
                 }, {});
-                return transformedObj;
+                return transformed;
             },
         }),
     }),

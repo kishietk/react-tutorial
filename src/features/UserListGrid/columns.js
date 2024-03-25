@@ -17,4 +17,14 @@ export const columns = [
             return params.value ? "〇" : ""
         },
     },
+    {
+        field: 'phone',
+        headerName: 'phone',
+        width: 400,
+    },
+    {
+        field: 'email',
+        headerName: 'email',
+        width: 400,
+    },
 ];

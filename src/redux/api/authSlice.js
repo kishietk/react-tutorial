@@ -5,6 +5,7 @@ export const authApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://192.168.2.146:8080/api/v1.0',
         prepareHeaders: (headers) => {
+            // Setting the Authorization header with the access token if available
             const accessToken = localStorage.getItem('accessToken');
             const authorization = accessToken ? `Bearer ${accessToken}` : '';
             headers.set('Authorization', authorization);
@@ -12,6 +13,7 @@ export const authApi = createApi({
         }
     }),
     endpoints: (builder) => ({
+        // Endpoint to login user
         login: builder.mutation({
             query: (formData) => ({
                 url: '/login',
@@ -19,6 +21,7 @@ export const authApi = createApi({
                 body: formData
             }),
         }),
+        // Endpoint to logout user
         logout: builder.mutation({
             query: () => ({
                 url: '/logout',
@@ -31,5 +34,4 @@ export const authApi = createApi({
 export const {
     useLoginMutation,
     useLogoutMutation,
-    useSignupMutation,
 } = authApi;

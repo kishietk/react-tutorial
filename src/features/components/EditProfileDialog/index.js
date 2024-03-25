@@ -6,7 +6,7 @@ import UpdateGeneralInfo from "./forms/UpdateGeneralInfo";
 import { useUpdateMeMutation } from "../../../redux/api/userSlice";
 import Loading from "../../../components/Loading";
 
-export default function EditProfileDialog({ reftch, openButtonText = "open", startIcon, user }) {
+export default function EditProfileDialog({ openButtonText = "open", startIcon, user }) {
     const [open, setOpen] = useState(false);
     const [message, setMessage] = useState("");
     const [updateMe, { isLoading, error }] = useUpdateMeMutation();
@@ -19,8 +19,6 @@ export default function EditProfileDialog({ reftch, openButtonText = "open", sta
     const handleOnUpdate = async (formData) => {
         try {
             const res = await updateMe(formData).unwrap();
-            if (!res.success) return;
-            reftch();
             setMessage(res?.message);
             setOpen(false);
         }

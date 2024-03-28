@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "../features/Header.js";
 import Fooder from "../features/Footer.js";
-import Sidebar from "../features/components/sidebars";
+import AuthSidebar from "../features/components/sidebars/AuthSidebar.js";
 
 export default function AuthLayout() {
     return <div className="app">
         <Header />
         <div className="main-container">
-            <Sidebar role="auth" />
+            <AuthSidebar />
             <div className="main">
                 <Outlet />
             </div>

@@ -1,4 +1,4 @@
-import Profile from '../features/Profile';
+import Profile from '../features/MyProfile';
 import BackPageButton from '../features/components/BackPageButton';
 import { Grid, Alert } from '@mui/material';
 import { useParams } from "react-router-dom";

@@ -15,6 +15,7 @@ import AuthRoute from "./AuthRoute.js";
 import AdminRoute from "./AdminRoute.js";
 import UserList from "../pages/UserList";
 import UserProfile from "../pages/UserProfile";
+import Permissions from "../pages/Permissions.js";
 
 export default function Router() {
     return useRoutes([
@@ -91,6 +92,19 @@ export default function Router() {
                         {
                             path: ':id',
                             element: <UserProfile />,
+                        },
+                        {
+                            path: '*',
+                            element: <NotFound />,
+                        },
+                    ],
+                },
+                {
+                    path: 'permissions',
+                    children: [
+                        {
+                            path: ':code',
+                            element: <Permissions />,
                         },
                         {
                             path: '*',

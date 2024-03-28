@@ -1,5 +1,5 @@
 import { Grid, Typography, Stack, Chip, Paper, Avatar } from '@mui/material';
-import DefaultIcon from "../../images/icon.png";
+import DefaultIcon from "../images/icon.png";
 
 export default function MyProfile({ user }) {
     return <Grid container spacing={4}>

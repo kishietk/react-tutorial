@@ -1,4 +1,4 @@
-import Profile from '../features/Profile';
+import MyProfileFeature from '../features/MyProfile';
 import BackPageButton from '../features/components/BackPageButton';
 import EditIcon from '@mui/icons-material/Edit';
 import EditProfileDialog from '../features/components/EditProfileDialog';
@@ -16,7 +16,7 @@ export default function MyProfile() {
 
     return user && <div className='content'>
         <Grid container style={{ display: "block", justifyContent: "center" }}>
-            <Profile user={user} />
+            <MyProfileFeature user={user} />
             <EditProfileDialog
                 openButtonText='Edit Profile'
                 startIcon={<EditIcon />}
